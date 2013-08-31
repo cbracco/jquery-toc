@@ -21,20 +21,20 @@
 
 			// Set variables
 			var el           = $(this), // Cache this
-				id           = 1,       // Doubles as a counter
-				depth        = null,    // Keeps track of heading depth
-				text         = "",      // Contains the table of contents
-				all_headings = settings.heading_tags.join(", "),
-				exclusions   = settings.exclude.join(", "),
-				$headings    = $(settings.scope).find(all_headings).not(exclusions);
+			    id           = 1,       // Doubles as a counter
+			    depth        = null,    // Keeps track of heading depth
+			    text         = "",      // Contains the table of contents
+			    all_headings = settings.heading_tags.join(", "),
+			    exclusions   = settings.exclude.join(", "),
+			    $headings    = $(settings.scope).find(all_headings).not(exclusions);
 
 			// Find all of the qualified heading tags
 			$headings.each(function() {
 
 				// Set variables for this heading, its tag, and its level
 				var heading       = $(this),
-					heading_tag   = this.tagName,
-					heading_level = heading_tag.substr(1, 1);
+				    heading_tag   = this.tagName,
+				    heading_level = heading_tag.substr(1, 1);
 
 				/**
 				 * Check the current depth and heading level first
